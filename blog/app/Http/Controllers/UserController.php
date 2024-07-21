@@ -26,4 +26,10 @@ class UserController extends Controller
     function viewUsername($name){
         return view("getuser",['name'=>$name]);
     }
+
+    function userHome(){
+        $name = 'chaman';
+        $users=['chaman','sarkar','kumar'];
+        return view('home',['name'=>$name,"users"=>$users]);
+    }
 }
