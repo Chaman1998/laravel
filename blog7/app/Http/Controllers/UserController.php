@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     //
-    function queries(){
+    function queries()
+    {
         // return "Que";
         // $result =DB::table('users')->get();
         // $result =DB::table('users')->first();
@@ -47,5 +48,8 @@ class UserController extends Controller
         // }else{
         //     return "Data not updated";
         // }
+
+        $result = DB::table('users')->get();
+        return view('users', ['users' => $result]);
     }
 }
