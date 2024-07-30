@@ -28,18 +28,47 @@ class StudentController extends Controller
     }
 
     //Student List
-    function list(){
+    function list()
+    {
         $studentData = Student::all();
-        return view('list-student',['students'=>$studentData]);;
+        return view('list-student', ['students' => $studentData]);;
     }
 
-    function delete($id){
+    function delete($id)
+    {
         $isDeleted = Student::destroy($id);
-        if($isDeleted){
+        if ($isDeleted) {
             // echo "Deleted";
             return redirect('list');
-        }else{
+        } else {
             echo "Not Deleted";
+        }
+    }
+    function edit($id)
+    {
+        $stuData = Student::find($id);
+        if ($stuData) {
+            return view('edit', ['data' => $stuData]);
+        } else {
+            echo "Not fetch";
+        }
+    }
+
+    function editStudent(Request $req, $id)
+    {
+        $validated = $req->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:students,email',
+            'phone' => 'required|string|max:15',
+        ]);
+        $stuData = Student::find($id);
+        $stuData->name = $validated['name'];
+        $stuData->email = $validated['email'];
+        $stuData->phone = $validated['phone'];
+        if ($stuData->save()) {
+            return redirect('list');
+        } else {
+            return "Update operation failed";
         }
     }
 }

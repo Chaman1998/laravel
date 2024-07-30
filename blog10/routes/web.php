@@ -15,3 +15,8 @@ Route::get('list',[StudentController::class,'list']);
 
 //Delete
 Route::get('delete/{id}',[StudentController::class,'delete']);
+
+//Edit
+Route::get('edit/{id}',[StudentController::class,'edit']);
+
+Route::put('edit-student/{id}',[StudentController::class,'editStudent']);
