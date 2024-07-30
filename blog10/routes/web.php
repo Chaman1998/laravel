@@ -23,3 +23,6 @@ Route::put('edit-student/{id}',[StudentController::class,'editStudent']);
 
 //Search
 Route::get('search',[StudentController::class,'search']);
+
+//Delete Selected Data only
+Route::post('delete-multi',[StudentController::class,'deleteMultiple']);

@@ -79,4 +79,13 @@ class StudentController extends Controller
         return view('list-student', ['students' => $stuData,'search'=>$req->search]);
         // return $req->search;
     }
+
+    function deleteMultiple(Request $req){
+        $result = Student::destroy($req->ids);
+        if($result){
+            return redirect('list');
+        }else{
+            return "Student data not found.";
+        }
+    }
 }
