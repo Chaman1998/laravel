@@ -15,7 +15,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Created At</th>
-            <th>Action</th>
+            <th colspan="2">Action</th>
         </tr>
         @foreach ($students as $student)
             <tr>
@@ -28,6 +28,7 @@
             </tr>
         @endforeach
     </table>
+    {{$students->links()}}
 </div>
 
 <style>
@@ -35,5 +36,8 @@
     td {
         margin: 8px;
         padding: 8px;
+    }
+    .w-5.h-5{
+        width: 20px;
     }
 </style>
