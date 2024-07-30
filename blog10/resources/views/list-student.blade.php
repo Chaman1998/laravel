@@ -1,6 +1,14 @@
 <div>
     <h2>Student List</h2>
+    <a href="add">Add Students</a> 
+    <a href="list">Students List</a>
     {{-- {{print_r($students)}} --}}
+    <br/>
+    <br/>
+    <form action="search" method="get">
+        <input type="text" placeholder="Enter Search with Name" name="search" value="{{@$search}}" />
+        <button>Search</button>
+    </form>
     <table border="1">
         <tr>
             <th>Name</th>

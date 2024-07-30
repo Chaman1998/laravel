@@ -20,3 +20,6 @@ Route::get('delete/{id}',[StudentController::class,'delete']);
 Route::get('edit/{id}',[StudentController::class,'edit']);
 
 Route::put('edit-student/{id}',[StudentController::class,'editStudent']);
+
+//Search
+Route::get('search',[StudentController::class,'search']);

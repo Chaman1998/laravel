@@ -31,7 +31,7 @@ class StudentController extends Controller
     function list()
     {
         $studentData = Student::all();
-        return view('list-student', ['students' => $studentData]);;
+        return view('list-student', ['students' => $studentData]);
     }
 
     function delete($id)
@@ -70,5 +70,11 @@ class StudentController extends Controller
         } else {
             return "Update operation failed";
         }
+    }
+
+    function search(Request $req){
+        $stuData = Student::where('name','like',"%$req->search%")->get();
+        return view('list-student', ['students' => $stuData,'search'=>$req->search]);
+        // return $req->search;
     }
 }
