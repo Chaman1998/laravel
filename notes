@@ -2,6 +2,7 @@
 -----------------------------------------
 @section('title','this is login page')
     |
+    |
     V
 @yield('title')
 -----------------------------------------
@@ -12,6 +13,7 @@
     .....
 </div>
 @endsection
+    |
     |
     V
 @section('main')
