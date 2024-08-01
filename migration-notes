@@ -1,0 +1,18 @@
+Make table---
+php artisan make:migration create_test_table
+
+Migrate table to database---
+php artisan migrate
+
+Single File Migration---
+php artisan migrate --path=/database/migrations/....    (For single table migration)
+
+Reset migration---
+php artisan migrate:reset
+
+Rollback Migration---
+php artisan migrate:rollback    (by default last 1 migration rollback)
+php artisan migrate:rollback --step2    (rollback last 2 migration)
+
+Rollback steps, refresh---
+php artisan migrate:refresh (Rollback and again migrate all table)
