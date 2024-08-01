@@ -1,0 +1,27 @@
+php artisan make:seeder MembersSeeder
+------------------------------------------------
+In MembersSeeder file
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+....
+....
+
+public function run(){
+    //
+    DB:table('members')->insert({
+        'name'=>Str::random(10),
+        'email'=>Str::random(10).'@gmail.com,
+        'address'=>Str::random(10),
+    })
+}
+------------------------------------------------
+//Here 'members' is a table name
+//And randomly create name, email, address for now to add the data into the database
+
+------------------------------------------------
+php artisan db:seed --class=MembersSeeder
+    |
+    |
+    V
+This command add randomly create data to the database with same field name
