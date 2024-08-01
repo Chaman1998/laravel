@@ -1,0 +1,23 @@
+For use api file create with this command
+--> php artisan install:api
+
+
+Laravel reverb
+
+Dumpable new features
+
+Health Check
+
+The once Function
+
+
+New Artisan Commands
+-->php artisan make:class
+-->php artisan make:enum
+-->php artisan make:interface
+-->php artisan make:trait
+
+Inspecting Databases and improved Schema Operations
+
+
+Pre-Second Rate Limiting
