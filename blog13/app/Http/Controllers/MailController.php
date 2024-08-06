@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Mail;
 class MailController extends Controller
 {
     //
-    function sendEmail(){
+    function sendEmail(Request $req){
         // return "Email send";
-        $to = "chamansarkar11@gmail.com";
-        $msg="dummy mail";
-        $subject="Mail send Successfully";
+        $to = $req->to;
+        $msg=$req->message;
+        $subject=$req->subject;
 
         Mail::to($to)->send(new welcomeEmail($msg,$subject));
+        return "Mail send";
     }
     
 }
