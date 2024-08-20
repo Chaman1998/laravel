@@ -62,7 +62,7 @@ class LoginController extends Controller
             $user->role = 'customer';
             $user->save();
 
-            return redirect()->route('account.login')->with('success', 'You have registered successfully.');
+            return redirect()->route('account.login')->with('success', 'You have registered successfully. Please login again.');
         } else {
             return redirect()->route('account.register')
                 ->withInput()

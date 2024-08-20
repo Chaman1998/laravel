@@ -27,11 +27,11 @@
                                     @endif
 
                                     <div class="mb-5">
-                                        <h4 class="text-center">Login Here</h4>
+                                        <h4 class="text-center">Admin Login Here</h4>
                                     </div>
                                 </div>
                             </div>
-                            <form action="{{ route('user.authenticate') }}" method="post">
+                            <form action="{{ route('admin.authenticate') }}" method="post">
                                 @csrf
                                 <div class="row gy-3 overflow-hidden">
                                     <div class="col-12">
