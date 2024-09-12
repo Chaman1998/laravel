@@ -25,3 +25,27 @@ php artisan db:seed --class=MembersSeeder
     |
     V
 This command add randomly create data to the database with same field name
+
+=====================================================================================
+
+-:Create Multiple Demo data:-
+1. Run Factory command:--
+    php artisan make:factory UserFactory
+2. Then inside the 'definition()' Enter this code for create random data:--
+    {
+    protected $model = User::class;
+    return [
+        "name"=>$this->faker->name,
+        "email"=>$this->faker->unique()->safeEmail,
+        "password"=>bcrypt("password")
+        ];
+    }
+
+3. Then update the 'UserSeeder' file:--
+    {
+        User::factory(100)->create();
+    }
+
+4. Then Run this code (based on code here create 100 demo data):--
+    php artisan db:seed --class=UserSeeder
+
