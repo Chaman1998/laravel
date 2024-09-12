@@ -26,6 +26,7 @@ Route::group(['prefix' => 'account'], function () {
         //Authenticate Page
         Route::post('authenticate', [LoginController::class, 'authenticate'])->name('account.authenticate');
     });
+
     //Authenticated middleware
     Route::group(['middleware' => 'auth'], function () {
         //Logout Page
