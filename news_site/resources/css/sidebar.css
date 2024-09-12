@@ -1,0 +1,103 @@
+#sidebar {
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+.search-box-container {
+    margin-bottom: 20px;
+}
+
+.search-box-container h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group-btn {
+    display: flex;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+.recent-post-container {
+    margin-top: 20px;
+}
+
+.recent-post-container h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.recent-post {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.recent-post .post-img {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.recent-post .post-img img {
+    width: 100%;
+    height: auto;
+}
+
+.recent-post .post-content h5 a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+}
+
+.recent-post .post-content h5 a:hover {
+    color: #007bff;
+}
+
+.recent-post .post-content span {
+    display: block;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.recent-post .post-content span i {
+    margin-right: 5px;
+}
+
+.recent-post .read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.recent-post .read-more:hover {
+    text-decoration: underline;
+}

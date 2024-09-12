@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"); */
+
+:root {
+    --color-1: #fff;
+    --text-color: black;
+    --accent-color: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 12pt;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+}
+.menu-border{
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+}
+nav {
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav svg {
+    fill: var(--text-color);
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button,
+.close-sidebar-button {
+    display: none;
+}
+
+/* Menu Items Links */
+nav div{
+    display: flex;
+}
+nav div a {
+    position: relative;
+    display: block;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 12px 8px;
+    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    border-bottom: 2px solid transparent; /* Reserve space for the border */
+    transition: border-color 0.1s ease-in, background-color 0.1s ease-in; /* Smooth transition */
+}
+
+nav div a.active {
+    border-bottom: 2px solid rgb(184, 0, 0); /* Red border for active state */
+    font-weight: 700;
+}
+nav div a.active:hover {
+    border-bottom: 2px solid transparent;
+}
+nav div a:hover {
+    background-color: var(--accent-color);
+}
+
+/* Menu Items Links */
+@media (max-width: 767.5px) {
+    .links-container {
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Move menu to the left side */
+        z-index: 10;
+        width: 200px;
+        background-color: var(--color-1);
+        box-shadow: 5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav div{
+        display: inline;
+    }
+    nav div a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 5px 10px 5px 5px;
+        margin-top: 0.25rem;
+        font-weight: 700;
+        border-left: 5px solid black;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+        display: block;
+        cursor: pointer;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        left: 0; /* Menu slides in from the left */
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
